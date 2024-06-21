@@ -3,17 +3,17 @@ import React, { useEffect, useMemo } from "react"
 import { Marker, Popup, useMap } from "react-leaflet"
 import icon from "./icon"
 
-export default function MarkerPosition({ lat = 51505,lng = -0.09 }) {
+export default function MarkerPosition({ lat ,lng  }) {
   const position = useMemo(() => {
     return [lat, lng]
   }, [lat, lng])
-  //const map = useMap()
+  const map = useMap()
 
-  /*useEffect(() => {
+  useEffect(() => {
     map.flyTo(position, 13, {
       animate: true,
     })
-  }, [map, position])*/
+  }, [map, position])
 
   return (
     <>

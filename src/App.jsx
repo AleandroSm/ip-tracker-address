@@ -45,7 +45,7 @@ function App() {
       <Search getTarget={getTarget} />
     </div>
       <Card ip={data?.ip} city={data?.location?.city} region={data?.location?.region} asn={data?.as?.asn} timeZone={data?.location?.timezone} isp={data?.isp} />
-      < Map lat={data?.location?.lat} lng={data?.location?.lng}/>
+      {data != null && < Map lat={data?.location?.lat} lng={data?.location?.lng}/>}
     </main>
   )
 }

@@ -11,7 +11,7 @@ export const Map = ({lat,lng}) => {
     return (
         <div className='absolute top-[400px] left-0 right-0 mx-auto z-0'>
             <MapContainer
-                center={[lat, -lng]}
+                center={[lat, lng]}
                 zoom={13}
                 scrollWheelZoom={false}
                 style={{ height: '68vh', width: '100%' }}
