@@ -9,12 +9,12 @@ export const Map = ({lat,lng}) => {
 
 
     return (
-        <div className='absolute top-[400px] left-0 right-0 mx-auto z-0'>
+        <div className='absolute top-[33%] left-0 right-0 mx-auto z-0'>
             <MapContainer
                 center={[lat, lng]}
                 zoom={13}
                 scrollWheelZoom={false}
-                style={{ height: '68vh', width: '100%' }}
+                style={{ height: '67vh', width: '100%' }}
             >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

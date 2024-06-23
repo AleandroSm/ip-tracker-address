@@ -11,7 +11,7 @@ export const Search = ({getTarget}) => {
             className="px-5 py-3 w-[80%] rounded-l-xl "
             name='target'
             />
-            <button className="bg-black px-5 py-3 rounded-r-xl h-[48px]">
+            <button className="bg-black px-5 py-4 rounded-r-xl ">
                 <img src={iconArrow} alt="arrow icon" />
             </button>
         </div>        
