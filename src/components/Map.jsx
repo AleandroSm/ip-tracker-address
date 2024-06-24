@@ -5,7 +5,7 @@ import {
 } from 'react-leaflet'
 import MarkerPosition from './MarkerPosition.jsx'
 
-export const Map = ({lat,lng}) => {
+export const Map = ({ lat, lng }) => {
 
 
     return (
@@ -16,10 +16,14 @@ export const Map = ({lat,lng}) => {
                 scrollWheelZoom={false}
                 style={{ height: '67vh', width: '100%' }}
             >
-                <TileLayer
+                {/* <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
+                /> */}
+                <TileLayer
+                    attribution="Google Maps"
+                    url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
+                ></TileLayer>
                 <MarkerPosition lat={lat} lng={lng} />
             </MapContainer>
 
