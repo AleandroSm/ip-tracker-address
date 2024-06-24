@@ -9,27 +9,19 @@ function App() {
 
   const [data,setData] = useState(null)
   const [target,setTarget] = useState('')
-  const getTarget = e => {
+  const getTarget = (e,setErr) => {
     e.preventDefault()
     const {target} = e.target
     const val = target.value
+    if(!validateIpAddress(val) && !validateDomain(val)){
+      setErr("invalid ip address or domain name")
+      return
+    }
+    setErr("")
     setTarget(val)
   }
 
-  useEffect(() => {
-    try {
-      const getData = async () => {
-        const res =await fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_5go7XM6HjdaKTxHAXWRh4PTTrG14n&ipAddress=8.8.8.8')
-        const data = await res.json()
-        console.log(data)
-        console.log("hola mundo")
-        setData(data)
-      }
-      getData()
-    } catch (error) {
-      console.log(error)
-    }
-},[])
+
   useEffect(() => {
   fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_5go7XM6HjdaKTxHAXWRh4PTTrG14n&${validateIpAddress(target) ? `ipAddress=${target}` : validateDomain(target) ? `domain=${target}` : ""}`)
   .then(res => res.json())
