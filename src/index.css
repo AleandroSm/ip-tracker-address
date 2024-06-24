@@ -14,3 +14,11 @@ hr{
  background-color: rgb(156 163 175);
 }
 
+@media (max-width: 640px){
+    hr{
+        display: none;
+    }
+    .leaflet-top, .leaflet-left{
+        display: none;
+    }
+}

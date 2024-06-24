@@ -6,7 +6,7 @@ export const Search = ({getTarget}) => {
     const [err,setErr] = useState("")
 
     return (
-        <form className='relative w-[30%]' onSubmit={(e) => getTarget(e,setErr)}>
+        <form className='relative w-[80%] md:w-[30%]' onSubmit={(e) => getTarget(e,setErr)}>
         <div className="w-full">
             {err && <p className='text-red-600'>{err}</p>}
             <input 
